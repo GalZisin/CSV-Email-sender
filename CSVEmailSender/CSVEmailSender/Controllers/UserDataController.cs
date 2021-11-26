@@ -40,12 +40,9 @@ namespace CSVEmailSender.Controllers
 
                 if (fileCreated)
                 {
-                    //var files = Request.Form.Files.Any() ? Request.Form.Files : new FormFileCollection();
-
+                    
                     FormFileCollection files = new FormFileCollection();
-                    //var message = new Message(new string[] { "galzisin86@gmail.com" }, "Test email", "This is the content from our email with attachment.", files);
-
-                    //MainAppPath.appPath = MainApp.appPath + @"\Files\user_data.zip";
+                 
                     await emailSender.SendEmailAsync(new string[] { MainAppPath.emailConfiguration.To }, "Test email", "This is the content from our email with attachment.", files, helper.zipPath);
 
                     System.Threading.Thread.Sleep(300);

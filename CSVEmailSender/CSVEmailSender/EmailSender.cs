@@ -21,11 +21,7 @@ namespace CSVEmailSender
         {
             _emailConfig = MainAppPath.emailConfiguration;
         }
-        //public EmailSender(EmailConfiguration emailConfig, string path)
-        //{
-   
-        //}
-
+     
         public async Task SendEmailAsync(IEnumerable<string> to, string subject, string content, IFormFileCollection attachments, string path)
         {
             To = new List<MailboxAddress>();
@@ -36,7 +32,7 @@ namespace CSVEmailSender
             emailMessage.From.Add(new MailboxAddress(_emailConfig.From));
             emailMessage.To.AddRange(To);
             emailMessage.Subject = subject;
-            //emailMessage.Body = new TextPart(MimeKit.Text.TextFormat.Text) { Text = message.Content };
+      
             emailMessage.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = string.Format("<h2 style='color:red;'>{0}</h2>", content) };
 
 
@@ -45,16 +41,6 @@ namespace CSVEmailSender
 
             bodyBuilder.Attachments.Add(path, fileBytes, ContentType.Parse("application/zip"));
 
-            //foreach (var attachment in attachments)
-            //{
-            //    using (var ms = new MemoryStream())
-            //    {
-            //        attachment.CopyTo(ms);
-            //        fileBytes = ms.ToArray();
-            //    }
-
-            //    //bodyBuilder.Attachments.Add(path, fileBytes, ContentType.Parse(attachment.ContentType));
-            //}
             emailMessage.Body = bodyBuilder.ToMessageBody();
 
             await SendAsync(emailMessage);

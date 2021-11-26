@@ -8,7 +8,6 @@ namespace CSVEmailSender
 {
     public interface IEmailSender
     {
-        //Task SendEmailAsync(Message message);
         Task SendEmailAsync(IEnumerable<string> to, string subject, string content, IFormFileCollection attachments, string path);
 
     }
