@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 1300px;
+  min-height: 500px;
+  background-color: #1e90ff;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+  background-color: #fff;
+  width: 1300px;
+  height: 100px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.vl {
+  border-left: 1px solid grey;
+  height: 50px;
+  align-self: center;
+  padding: 0 15px 0 15px;
+}
+.navbar-right,
+.navbar-left {
+  display: flex;
+  flex-direction: row;
+}
+.navbar-right img {
+  align-self: center;
+}
+.navbar-right {
+  margin-left: 100px;
+}
+.navbar-left {
+  margin-right: 100px;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.main-header #span1 {
+  color: hotpink;
+  margin-left: 10px;
+}
+.main-header #span2 {
+  color: #000;
+}
+.sub-header {
+  align-self: center;
+}
+.sub-header #p1 {
+  color: hotpink;
+  font-weight: 600;
+}
+.sub-header #p2 {
+  font-size: 14px;
+  text-align: center;
+}
+q {
+  quotes: '"' '"' "'" "'";
+}
+q::before {
+  content: open-quote;
+}
+q::after {
+  content: close-quote;
+}
+.userform {
+  display: flex;
+  flex-direction: column;
+  margin-top: 45px;
+}
+.first-last-name,
+.street-apartment {
+  flex-direction: row;
+}
+input::placeholder {
+  text-align: right;
+}
+input {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin: 8px 0;
+}
+.street-apartment {
+  display: flex;
+}
+#input-firstname,
+#street {
+  margin-left: 10px;
+}
+#apartmet-num {
+  width: 15%;
+}
+#street {
+  flex: 1;
+}
+.packageDetails {
+  height: 400px;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 4px;
+  margin: 45px 20px 0 20px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: beige;
+}
